@@ -59,11 +59,11 @@ $(document).ready(function() {
 
           for (var message of messages) {
             if (message.type === 'unstructured') {
-              insertResponseMessage(message.unstructured.text);
+              insertResponseMessage(message.unstructured.text.content);
             } else if (message.type === 'structured' && message.structured.type === 'product') {
               var html = '';
 
-              insertResponseMessage(message.structured.text);
+              insertResponseMessage(message.structured.text.content);
 
               setTimeout(function() {
                 html = '<img src="' + message.structured.payload.imageUrl + '" witdth="200" height="240" class="thumbnail" /><b>' +
